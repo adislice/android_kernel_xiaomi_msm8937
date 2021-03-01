@@ -1,1 +1,2 @@
 #include "display.dtsi"
+#include "soc.dtsi"
