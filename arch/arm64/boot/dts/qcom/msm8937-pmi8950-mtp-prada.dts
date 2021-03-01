@@ -17,6 +17,7 @@
 #include "msm8937-pmi8950-mtp.dtsi"
 
 #include "xiaomi/xiaomi.dtsi"
+#include "xiaomi/prada/prada.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. MSM8937-PMI8950 MTP";
