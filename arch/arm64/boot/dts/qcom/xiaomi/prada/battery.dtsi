@@ -1,0 +1,8 @@
+&vendor {
+	/delete-node/ qcom,battery-data;
+	mtp_batterydata: qcom,battery-data {
+		qcom,batt-id-range-pct = <15>;
+		#include "battery/coslight-4000mah.dtsi"
+		#include "battery/scud-4000mah.dtsi"
+	};
+};
