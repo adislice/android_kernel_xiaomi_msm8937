@@ -1,0 +1,81 @@
+&i2c_3 {
+	status = "okay";
+
+			atmel_mxt_ts@4a {
+				atmel,config-array-size = < 0x01 >;
+				atmel,default-config = < 0x00 >;
+				atmel,irq-gpio = < &tlmm 0x41 0x2008 >;
+				atmel,irqflags = < 0x2008 >;
+				atmel,mxt-fw-name = "mxt_308u.enc";
+				atmel,reset-gpio = < &tlmm 0x40 0x00 >;
+				atmel,vendor-id-byte = [ 00 03 ];
+				compatible = "atmel,mxt-ts";
+				interrupt-parent = < &tlmm >;
+				interrupts = < 0x41 0x2008 >;
+				pinctrl-0 = < &ts_int_active &ts_reset_active >;
+				pinctrl-1 = < &ts_int_suspend &ts_reset_suspend >;
+				pinctrl-names = "pmx_ts_active", "pmx_ts_suspend";
+				reg = < 0x4a >;
+				vdd-supply = < &pm8937_l10 >;
+				vddio-supply = < &pm8937_l6 >;
+
+				atmel,cfg_1 {
+					atmel,atchthr-sensitive = < 0x06 >;
+					atmel,build = < 0xab >;
+					atmel,family-id = < 0xa6 >;
+					atmel,key-codes = < 0x9e 0xac 0x8b >;
+					atmel,mult-intthr-not-sensitive = < 0x11 >;
+					atmel,mult-intthr-sensitive = < 0x0c >;
+					atmel,mult-tchthr-not-sensitive = < 0x00 >;
+					atmel,mult-tchthr-sensitive = < 0x00 >;
+					atmel,mxt-cfg-name = "mxt_308u_b5_f.raw";
+					atmel,panel-id = < 0x00 >;
+					atmel,rev-id = < 0x02 >;
+					atmel,self-chgtime-max = < 0x00 >;
+					atmel,self-chgtime-min = < 0x00 >;
+					atmel,selfintthr-stylus = < 0x00 >;
+					atmel,t71-tchthr-pos = < 0x16 >;
+					atmel,variant-id = < 0x07 >;
+					atmel,vendor-id = < 0x31 0x31 >;
+					atmel,version = < 0x10 >;
+					atmel,wake-up-self-adcx = < 0x10 >;
+				};
+			};
+
+			focaltech@38 {
+				compatible = "focaltech,fts";
+				focaltech,button-map = < 0xb4 0x21c 0x384 >;
+				focaltech,display-coords = < 0x00 0x00 0x2d0 0x500 >;
+				focaltech,family-id = < 0x14 >;
+				focaltech,fw-auto-cal;
+				focaltech,fw-delay-55-ms = < 0x1e >;
+				focaltech,fw-delay-aa-ms = < 0x1e >;
+				focaltech,fw-delay-era-flsh-ms = < 0x7d0 >;
+				focaltech,fw-delay-readid-ms = < 0x0a >;
+				focaltech,fw-name = "FT_Upgrade_App.i";
+				focaltech,fw-upgrade-id1 = < 0x79 >;
+				focaltech,fw-upgrade-id2 = < 0x11 >;
+				focaltech,fw-vkey-support = < 0x01 >;
+				focaltech,gesture-support;
+				focaltech,group-id = < 0x01 >;
+				focaltech,hard-reset-delay-ms = < 0x14 >;
+				focaltech,i2c-pull-up;
+				focaltech,irq-gpio = < &tlmm 0x41 0x00 >;
+				focaltech,name = "focaltech";
+				focaltech,no-force-update;
+				focaltech,num-max-touches = < 0x0a >;
+				focaltech,panel-coords = < 0x00 0x00 0x2d0 0x500 >;
+				focaltech,psensor-support;
+				focaltech,reset-gpio = < &tlmm 0x40 0x00 >;
+				focaltech,soft-reset-delay-ms = < 0x96 >;
+				interrupt-parent = < &tlmm >;
+				interrupts = < 0x41 0x00 >;
+				pinctrl-0 = < &ts_int_active &ts_reset_active >;
+				pinctrl-1 = < &ts_int_suspend &ts_reset_suspend >;
+				pinctrl-2 = < &ts_release >;
+				pinctrl-names = "pmx_ts_active", "pmx_ts_suspend", "pmx_ts_release";
+				reg = < 0x38 >;
+				vcc_i2c-supply = < &pm8937_l6 >;
+				vdd-supply = < &pm8937_l10 >;
+			};
+};

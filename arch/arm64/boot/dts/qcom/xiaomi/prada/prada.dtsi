@@ -1,7 +1,10 @@
+#include "pinctrl.dtsi"
+
 #include "battery.dtsi"
 #include "display.dtsi"
 #include "misc.dtsi"
 #include "pm.dtsi"
 #include "soc.dtsi"
+#include "touchscreen.dtsi"
 
 #include "temp-disable.dtsi"
