@@ -41,3 +41,21 @@
 		reg = < 0x00 0x91400000 0x00 0x200000 >;
 	};
 };
+
+&soc {
+        cpuss_dump {
+		status = "disabled";
+	};
+};
+
+&i2c_5 {
+	status = "disabled";
+};
+
+&soc {
+	sn_fuse: snfuse@0xa0128 {
+		compatible = "qcom,sn-fuse";
+		reg = <0xa4128 0x4>;
+		reg-names = "sn-base";
+	};
+};

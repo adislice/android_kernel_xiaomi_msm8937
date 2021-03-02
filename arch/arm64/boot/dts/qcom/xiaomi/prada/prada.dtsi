@@ -1,3 +1,7 @@
 #include "battery.dtsi"
 #include "display.dtsi"
+#include "misc.dtsi"
+#include "pm.dtsi"
 #include "soc.dtsi"
+
+#include "temp-disable.dtsi"

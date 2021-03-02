@@ -1,0 +1,11 @@
+&pmi_haptic {
+	qcom,actuator-type = "erm";
+	qcom,ilim-ma = < 0x5f >;
+	qcom,vmax-mv = < 0xaf0 >;
+	qcom,wave-play-rate-us = < 0x148f >;
+};
+
+&wled {
+	/delete-property/ qcom,en-ext-pfet-sc-pro;
+	qcom,en-cabc;
+};
