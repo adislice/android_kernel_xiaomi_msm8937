@@ -1,7 +1,3 @@
 #include "panel/mdss_dsi_hx8394f_boe_720p_video.dtsi"
 #include "panel/mdss_dsi_ili9881c_tianma_720p_video.dtsi"
 #include "panel/mdss_dsi_nt35521s_ctc_720p_video.dtsi"
-
-&mdss_mdp {
-	/delete-node/ qcom,mdss-hw-rt-bus;
-};

@@ -1,15 +1,3 @@
-&pm8937_s2_floor_level {
-	regulator-max-microvolt = < 0x180 >;
-};
-
-&pm8937_s2_level {
-	regulator-max-microvolt = < 0x180 >;
-};
-
-&pm8937_s2_level_ao {
-	regulator-max-microvolt = < 0x180 >;
-};
-
 &spmi_bus {
 	qcom,pm8937@0 {
 		qcom,power-on@800 {

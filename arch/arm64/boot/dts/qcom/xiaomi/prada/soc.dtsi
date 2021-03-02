@@ -42,12 +42,6 @@
 	};
 };
 
-&soc {
-        cpuss_dump {
-		status = "disabled";
-	};
-};
-
 &i2c_5 {
 	status = "disabled";
 };
