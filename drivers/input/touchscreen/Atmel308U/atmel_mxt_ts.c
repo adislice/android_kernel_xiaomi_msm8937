@@ -4368,7 +4368,7 @@ static ssize_t mxt_wakeup_mode_store(struct device *dev,
 		return count;
 	}
 
-	error = strict_strtoul(buf, 0, &val);
+	error = kstrtoul(buf, 0, &val);
 
 	if (!error)
 		data->wakeup_gesture_mode = (u8)val;
@@ -4411,7 +4411,7 @@ static ssize_t  mxt_sensitive_mode_store(struct device *dev,
 	unsigned long val;
 	int error;
 
-	error = strict_strtoul(buf, 0, &val);
+	error = kstrtoul(buf, 0, &val);
 	if (!error) {
 		if (val == 1) {
 			error = mxt_sensitive_mode_switch(data, true);

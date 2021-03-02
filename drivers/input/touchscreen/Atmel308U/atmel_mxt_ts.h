@@ -28,8 +28,8 @@
 #define CFG_NAME_SIZE		64
 
 #define MXT_KEYARRAY_MAX_KEYS		32
-#define CTP_PROC_INTERFACE                    1
-#define WT_ADD_CTP_INFO                           1
+#define CTP_PROC_INTERFACE                    0
+#define WT_ADD_CTP_INFO                           0
 #define KEYCODE_WAKEUP                    143
 /*TP Color*/
 #define TP_White      0x31
