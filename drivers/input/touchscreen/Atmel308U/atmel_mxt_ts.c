@@ -33,6 +33,11 @@
 #include <linux/fb.h>
 #endif
 
+#ifdef CONFIG_MACH_XIAOMI
+#include <linux/xiaomi_device.h>
+extern int xiaomi_device_read(void);
+#endif
+
 static u8 TP_Maker, LCD_Maker, Panel_Ink;
 static u8 Fw_Version[3];
 u8 Panel_ID;
@@ -6259,6 +6264,12 @@ static struct i2c_driver mxt_driver = {
 static int __init mxt_init(void)
 {
 	CTP_DEBUG("mxt_init.");
+
+#ifdef CONFIG_MACH_XIAOMI
+	if (xiaomi_device_read() != XIAOMI_DEVICE_PRADA)
+		return -ENODEV;
+#endif
+
 	return i2c_add_driver(&mxt_driver);
 }
 
