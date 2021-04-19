@@ -2212,7 +2212,11 @@ static int msm_audrx_init(struct snd_soc_pcm_runtime *rtd)
 
 	snd_soc_dapm_sync(dapm);
 
+#if defined(CONFIG_MACH_XIAOMI_ULYSSE) || defined(CONFIG_MACH_XIAOMI_LAND) || defined(CONFIG_MACH_XIAOMI_SANTONI) || defined(CONFIG_MACH_XIAOMI_ROVA) || defined(CONFIG_MACH_XIAOMI_TIARE)
+	if (xiaomi_series_read() != XIAOMI_SERIES_ULYSSE) {
 	msm_anlg_cdc_spk_ext_pa_cb(enable_spk_ext_pa, ana_cdc);
+	}
+#endif
 	msm_dig_cdc_hph_comp_cb(config_hph_compander_gpio, dig_cdc);
 
 	mbhc_cfg.calibration = def_msm8952_wcd_mbhc_cal();
