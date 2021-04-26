@@ -565,6 +565,10 @@ static void msm_isp_cfg_framedrop_reg(
 
 	if (framedrop_period != MSM_VFE_STREAM_STOP_PERIOD)
 		framedrop_pattern = 0x1;
+#ifdef CONFIG_MACH_XIAOMI_ULYSSE
+		if(framedrop_period > 1)
+			framedrop_pattern = framedrop_pattern << (framedrop_period-1);
+#endif
 
 	if (WARN_ON(framedrop_period == 0))
 		pr_err("%s framedrop_period is 0", __func__);
