@@ -604,6 +604,10 @@ static int32_t msm_flash_prepare(
 		__func__, __LINE__, flash_ctrl->flash_state);
 
 	if (flash_ctrl->switch_trigger == NULL) {
+#ifdef CONFIG_MACH_XIAOMI_ULYSSE
+		if (flash_ctrl->flash_driver_type == FLASH_DRIVER_GPIO)
+			return ret;
+#endif
 		if (flash_ctrl->platform_flash_init)
 			return ret;
 		pr_err("%s:%d Invalid argument\n",
